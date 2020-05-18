@@ -1016,18 +1016,15 @@ class _AnimatedTileState extends State<AnimatedTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: widget.tile.opacity,
-      child: (widget.tile.loadError && widget.errorImage != null)
-          ? Image(
-              image: widget.errorImage,
-              fit: BoxFit.fill,
-            )
-          : RawImage(
-              image: widget.tile.imageInfo?.image,
-              fit: BoxFit.fill,
-            ),
-    );
+    return (widget.tile.loadError && widget.errorImage != null)
+        ? Image(
+            image: widget.errorImage,
+            fit: BoxFit.fill,
+          )
+        : RawImage(
+            image: widget.tile.imageInfo?.image,
+            fit: BoxFit.fill,
+          );
   }
 
   @override
